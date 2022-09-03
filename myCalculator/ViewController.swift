@@ -25,7 +25,7 @@ class ViewController: UIViewController
     {
         workings = ""
         calculatorWorkings.text = ""
-        calculatorResults.text = "0"
+        calculatorResults.text = ""
     }
 
     @IBAction func equalsTap(_ sender: Any)
@@ -36,8 +36,7 @@ class ViewController: UIViewController
             let expression = NSExpression(format: checkedWorkingsForPercent)
             let result = expression.expressionValue(with: nil, context: nil) as! Double
             let resultString = formatResult(result: result)
-            
-            
+            calculatorResults.text = resultString
         }
         else
         {
